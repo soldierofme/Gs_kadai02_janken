@@ -5,23 +5,36 @@
     <meta name="viewport" content="width=device-width" />
     <script src="js/jquery-2.1.3.min.js"></script>
     <link rel="stylesheet" href="css/sample.css" />
-    <title>じゃんけん</title>
+    <title>じゃんけんGame</title>
   </head>
 
   <body>
     <header>
-      <h1>じゃんけんゲーム</h1>
+      <h1></h1>
     </header>
 
     <main>
-      <ul>
-        <li id="gu_btn">グー</li>
-        <li id="cho_btn">チョキ</li>
-        <li id="par_btn">パー</li>
-      </ul>
-      <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
-      <div id="judgment">勝ち</div>
-      <p id="echo"></p>
+      <div class="game">
+        <div class="t2 you">
+          <h2>YOU</h2>
+          <ul>
+            <li id="gu_btn"><img src="img/gu.png" alt="" width="100" /></li>
+            <li id="cho_btn"><img src="img/choki.png" alt="" width="100" /></li>
+            <li id="par_btn"><img src="img/pa.png" alt="" width="100" /></li>
+          </ul>
+        </div>
+        <div class="t2 vs">
+          <h2>VS</h2>
+        </div>
+        <div class="t2 com">
+          <h2>COMPUTER</h2>
+          <p><span id="pc_hands"></span></p>
+        </div>
+      </div>
+      <div id="judgment">
+        <p>judgement</p>
+        <p id="echo"></p>
+      </div>
     </main>
 
     <footer></footer>
@@ -30,16 +43,16 @@
         const r = Math.ceil(Math.random() * 3);
         let view = "";
         if (r == 1) {
-          view2 = "グー";
+          view2 = '<img src="img/gu.png" width="200"> ';
           view = "あいこ";
         }
         if (r == 2) {
-          view = "勝ち";
-          view2 = "チョキ";
+          view = "You win!";
+          view2 = '<img src="img/choki.png" width="200"> ';
         }
         if (r == 3) {
-          view = "負け";
-          view2 = "パー";
+          view = "You lose";
+          view2 = '<img src="img/pa.png" width="200"> ';
         }
         $("#echo").html(view);
         $("#pc_hands").html(view2);
@@ -48,16 +61,16 @@
         const r = Math.ceil(Math.random() * 3);
         let view = "";
         if (r == 1) {
-          view2 = "グー";
-          view = "負け";
+          view2 = '<img src="img/gu.png" width="200"> ';
+          view = "You lose";
         }
         if (r == 2) {
           view = "あいこ";
-          view2 = "チョキ";
+          view2 = '<img src="img/choki.png" width="200"> ';
         }
         if (r == 3) {
-          view = "勝ち";
-          view2 = "パー";
+          view = "You win!";
+          view2 = '<img src="img/pa.png" width="200"> ';
         }
         $("#echo").html(view);
         $("#pc_hands").html(view2);
@@ -66,16 +79,16 @@
         const r = Math.ceil(Math.random() * 3);
         let view = "";
         if (r == 1) {
-          view2 = "グー";
-          view = "勝ち";
+          view2 = '<img src="img/gu.png" width="200"> ';
+          view = "You win!";
         }
         if (r == 2) {
           view = "負け";
-          view2 = "チョキ";
+          view2 = '<img src="img/choki.png" width="200"> ';
         }
         if (r == 3) {
           view = "あいこ";
-          view2 = "パー";
+          view2 = '<img src="img/pa.png" width="200"> ';
         }
         $("#echo").html(view);
         $("#pc_hands").html(view2);
