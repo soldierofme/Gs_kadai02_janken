@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <script src="js/jquery-2.1.3.min.js"></script>
+    ()
     <link rel="stylesheet" href="css/sample.css" />
     <title>じゃんけんGame</title>
   </head>
@@ -35,6 +36,8 @@
         <p>judgement</p>
         <p id="echo"></p>
       </div>
+      <div class="shoritu">勝率</div>
+      <p id="echo"></p>
     </main>
 
     <footer></footer>
@@ -92,6 +95,11 @@
         }
         $("#echo").html(view);
         $("#pc_hands").html(view2);
+        let jankencount = 0;
+        let playerwincount = 0;
+        playerwincount++;
+        const winRate = (playerwincount / jankencount) * 10;
+        $("#result").text(playerwincount);
       });
     </script>
   </body>
